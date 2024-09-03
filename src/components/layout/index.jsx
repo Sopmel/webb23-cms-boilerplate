@@ -11,14 +11,15 @@ export default function Layout({ config, children }) {
     useEffect(() => {
         // Hämta navigationsdata från Storyblok
         const fetchNavigation = async () => {
-            const config = await StoryblokCMS.getConfig();;
-            const navItems = config.content.navigation;
-            setNavigation(navItems);
+            try {
+                const config = await StoryblokCMS.getConfig();
+                const navItems = config.content.navigation;
+                setNavigation(navItems);
+            } catch (error) {
+                console.error('Error fetching navigation data:', error);
+            }
         };
 
-        fetchNavigation().catch(error => {
-            console.error('Error fetching navigation data:', error);
-        });
         fetchNavigation();
     }, []);
 
@@ -29,7 +30,7 @@ export default function Layout({ config, children }) {
             <header>
                 <Navbar navigation={navigation} />
             </header>
-            <main className="px-8 md:px-16 lg:px-32">{children}</main>
+            <main className="px-4 md:px-8 lg:px-16">{children}</main>
             <footer></footer>
         </>
     );

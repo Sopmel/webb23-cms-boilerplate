@@ -9,14 +9,16 @@ export default function Page({ blok }) {
 
                     // Anpassad rendering för title-komponenten
                     return (
-                        <div key={blokItem._uid} className="text-center p-4">
-                            <h1 className="text-4xl font-bold mb-4">{blokItem.title}</h1>
-                            <p>{blokItem.description}</p>
+                        <div key={blokItem._uid} className="flex items-center p-4">
+                            <div className="text-left w-1/2">
+                                <h1 className="text-4xl font-bold mb-4">{blokItem.title}</h1>
+                                <p>{blokItem.description}</p>
+                            </div>
                             {blokItem.image && (
                                 <img
                                     src={blokItem.image.filename}
                                     alt={blokItem.image.alt || blokItem.title}
-                                    className="my-4 mx-auto"
+                                    className="w-1/2 h-auto ml-4"
                                 />
                             )}
                         </div>
@@ -24,7 +26,7 @@ export default function Page({ blok }) {
                 }
 
                 // Standard rendering för andra komponenter
-                return <StoryblokComponent blok={blokItem} key={blokItem._uid} />;
+                //return <StoryblokComponent blok={blokItem} key={blokItem._uid} />;
             })}
         </main>
     );
