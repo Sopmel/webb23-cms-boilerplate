@@ -1,6 +1,7 @@
 import { StoryblokCMS } from "@/utils/cms";
 import { notFound } from "next/navigation";
 import StoryblokStory from "@storyblok/react/story";
+import Layout from "@/components/layout";
 
 export async function generateMetadata() {
   return StoryblokCMS.generateMetaFromStory("home");
@@ -11,7 +12,11 @@ export default async function StartPage({}) {
     const currentStory = await StoryblokCMS.getStory({ slug: ["home"] });
     if (!currentStory) throw new Error();
 
-    return <StoryblokStory story={currentStory} />;
+    return (
+      <Layout>
+        <StoryblokStory story={currentStory} />
+      </Layout>
+    );
   } catch (error) {
     notFound();
   }
