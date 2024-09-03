@@ -1,4 +1,5 @@
 import { getStoryblokApi } from "@storyblok/react/rsc";
+
 export class StoryblokCMS {
   static IS_PROD = process.env.NODE_ENV === "production";
   static IS_DEV = process.env.NODE_ENV === "development";
@@ -19,6 +20,7 @@ export class StoryblokCMS {
     );
     return data.story;
   }
+  
 
   static getDefaultSBParams() {
     return {

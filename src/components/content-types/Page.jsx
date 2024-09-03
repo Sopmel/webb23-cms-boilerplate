@@ -5,17 +5,18 @@ export default function Page({ blok }) {
     return (
         <main className="flex flex-col">
             {blok?.body?.map((blokItem) => {
-                if (blokItem.component === "title") {
+                if (blokItem.component === "title" || blokItem.component === "about_title") {
+
                     // Anpassad rendering för title-komponenten
                     return (
-                        <div key={blokItem._uid}>
-                            <h1 className="text-4xl font-bold">{blokItem.title}</h1>
+                        <div key={blokItem._uid} className="text-center p-4">
+                            <h1 className="text-4xl font-bold mb-4">{blokItem.title}</h1>
                             <p>{blokItem.description}</p>
                             {blokItem.image && (
                                 <img
                                     src={blokItem.image.filename}
                                     alt={blokItem.image.alt || blokItem.title}
-                                    className="my-4"
+                                    className="my-4 mx-auto"
                                 />
                             )}
                         </div>
