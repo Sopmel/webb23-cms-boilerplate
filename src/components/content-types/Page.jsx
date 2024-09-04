@@ -17,7 +17,10 @@ export default function Page({ blok }) {
                         <h1 className="text-4xl font-bold mb-4">{titleBloks[0].title}</h1>
                         <p>{titleBloks[0].description}</p>
                         {titleBloks[0].button && titleBloks[0].button.length > 0 && (
-                            <button className="mt-4 px-4 py-2 bg-blue-500 text-white rounded">
+                            <button
+                                className="mt-4 px-4 py-2 bg-blue-500 text-white rounded"
+                                onClick={() => alert('Button clicked!')}
+                            >
                                 {titleBloks[0].button[0].titel}
                             </button>
                         )}
