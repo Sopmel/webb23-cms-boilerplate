@@ -5,7 +5,7 @@ import Navbar from './Navbar';
 import { StoryblokCMS } from '@/utils/cms';
 
 //Uses config set global components for the layout
-export default function Layout({ config, children }) {
+export default function Layout({ children }) {
     const [navigation, setNavigation] = useState([]);
 
     useEffect(() => {

@@ -26,9 +26,9 @@ export default function Navbar({ navigation }) {
             <ul className="flex space-x-4">
                 {navigation.map((item, index) => (
                     item.component !== 'Logo_image' && (
-                        <li key={index}>
+                        <li key={index} className="mx-2">
                             <Link href={item.link.cached_url}>
-                                <span className="px-4 py-2 text-blue-500 hover:text-blue-700">{item.title}</span>
+                                <span className="px-4 py-2 text-black text-lg hover:text-blue-700">{item.title}</span>
                             </Link>
                         </li>
                     )
