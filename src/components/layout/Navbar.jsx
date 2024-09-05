@@ -2,6 +2,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 
 export default function Navbar({ navigation }) {
+    console.log('Navbar rendered');
     if (!navigation || navigation.length === 0) {
         return null; // Eller returnera en laddningsindikator
     }

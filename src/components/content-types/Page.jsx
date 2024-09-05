@@ -2,15 +2,15 @@ import { StoryblokComponent } from "@storyblok/react/rsc";
 
 // Content-type component (acts as template for all pages)
 export default function Page({ blok }) {
-    // Filtrera ut alla 'title'- och 'about_title'-komponenter
+
     const titleBloks = blok.body.filter(blokItem => blokItem.component === 'title' || blokItem.component === 'about_title');
 
-    // Filtrera alla section_1-komponenter
+
     const section1Bloks = blok.body.filter(blokItem => blokItem.component === 'section_1');
 
     return (
         <main className="flex flex-col">
-            {/* Rendera den första title-komponenten */}
+
             {titleBloks.length > 0 && (
                 <div key={titleBloks[0]._uid} className="flex items-center p-8">
                     <div className="text-left w-1/2">
