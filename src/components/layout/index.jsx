@@ -5,16 +5,18 @@ import Navbar from './Navbar';
 import { StoryblokCMS } from '@/utils/cms';
 
 //Uses config set global components for the layout
-export default function Layout({ config, children }) {
+export default function Layout({ children }) {
     const [navigation, setNavigation] = useState([]);
+    console.log('Children components:', children);
 
     useEffect(() => {
-        // Hämta navigationsdata från Storyblok
+
         const fetchNavigation = async () => {
             try {
                 const config = await StoryblokCMS.getConfig();
                 const navItems = config.content.navigation;
                 setNavigation(navItems);
+                console.log('Navigation data:', navItems);
             } catch (error) {
                 console.error('Error fetching navigation data:', error);
             }
@@ -22,6 +24,7 @@ export default function Layout({ config, children }) {
 
         fetchNavigation();
     }, []);
+
 
     //Create at least a header and footer component
     //Use console.log to determine blok object structure if unsure...
