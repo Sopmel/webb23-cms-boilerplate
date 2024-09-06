@@ -4,10 +4,10 @@ import Image from 'next/image';
 export default function Navbar({ navigation }) {
     console.log('Navbar rendered');
     if (!navigation || navigation.length === 0) {
-        return null; // Eller returnera en laddningsindikator
+        return null;
     }
 
-    // Hitta logotypobjektet i navigation
+
     const logoItem = navigation.find(item => item.component === 'Logo_image');
 
     return (
@@ -18,8 +18,9 @@ export default function Navbar({ navigation }) {
                         <Image
                             src={logoItem.Image.filename}
                             alt="Logo"
-                            width={200} // Anpassa bredden efter behov
-                            height={200} // Anpassa höjden efter behov
+                            width={200}
+                            height={200}
+                            style={{ width: 'auto', height: 'auto' }}
                         />
                     </Link>
                 </div>
