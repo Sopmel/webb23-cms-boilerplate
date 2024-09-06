@@ -14,7 +14,7 @@ export default function Navbar({ navigation }) {
         <nav className="flex justify-between items-center p-4">
             {logoItem && (
                 <div className="flex-shrink-0">
-                    <Link href="/">
+                    <Link href="/home">
                         <Image
                             src={logoItem.Image.filename}
                             alt="Logo"

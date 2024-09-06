@@ -14,6 +14,7 @@ export default async function RootLayout({ children }) {
   return (
     <StoryblokProvider>
       <html>
+        
         <body>
           <Layout config={currentConfig}>{children}</Layout>
         </body>
